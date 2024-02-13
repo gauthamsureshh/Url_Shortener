@@ -9,7 +9,7 @@
     <meta charset="UTF-8">
     @yield('css')
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title','URL Short')</title>
+    <title>@yield('title','TinyRoute')</title>
 </head>
 <body>
     @include('layouts.navBar')

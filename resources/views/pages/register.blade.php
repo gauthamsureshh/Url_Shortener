@@ -1,14 +1,22 @@
 @extends('layouts.main')
 
+@section('css')
+<link rel="stylesheet" href="{{URL::asset('css/auth.css')}}"/>
+@endsection
+
 @section('title','Register')
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="mt-5">
         @if ($errors->any())
             <div class="col">
                 @foreach ($errors->all() as $error )
                     <div class="alert alert-danger">{{$error}}</div>
                 @endforeach
+            </div>
+        @elseif (session()->has('errors'))
+            <div class="alert alert-danger">
+                {{session('errors')}}
             </div>
         @endif
     </div>

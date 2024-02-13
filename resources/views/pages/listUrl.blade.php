@@ -11,9 +11,9 @@
         <table class="table" border="1">
             <thead class="thead-dark">
                 <div>
-                    <h1>Shorten URL's </h1>
+                    <h1>Tiny URL's </h1>
                     @if (session()->has('success'))
-                        <div class="text-white">
+                        <div class="alert alert-success">
                             {{session('success')}}
                         </div>
                         
@@ -22,7 +22,7 @@
             <tr>
                 <th>Id</th>
                 <th>URL</th>
-                <th>Shorten URL</th>
+                <th>TinyRoutes</th>
                 <th>Actions</th>
             </tr>
             </thead>

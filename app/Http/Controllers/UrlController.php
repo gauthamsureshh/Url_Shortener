@@ -28,7 +28,7 @@ class UrlController extends Controller
         $data['long_url']=$request->long_url;
         $data['shorturl']=Str::random(5);
         Url::create($data);
-        return redirect(route('list'));
+        return redirect(route('list'))->with('success','Url Added');
     }
 
     public function edit(Url $url)
