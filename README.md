@@ -1,4 +1,4 @@
- TinyRoute is a straightforward URL shortener with User Authentication and management features built using Laravel
+TinyRoute is a straightforward URL shortener with User Authentication and management features built using Laravel
 It has the following features:
     User Authentication:
         Users can register for a new account by providing their email and creating a password.
