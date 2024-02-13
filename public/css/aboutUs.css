@@ -1,0 +1,13 @@
+.container-fluid{
+    background-image: url('https://t3.ftcdn.net/jpg/06/99/60/84/240_F_699608454_N0aNNuffK2cJmufI67f8FwNmE0d5IGXL.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+body{
+    overflow: hidden;
+}
+p{
+    font-size: 20px;
+}

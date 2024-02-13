@@ -1,5 +1,6 @@
 @extends('layouts.main')
 
+@section('title','Edit Url')
 @section('content')
     <div class="container">
         <div class="card">

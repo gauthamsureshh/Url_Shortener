@@ -1,0 +1,14 @@
+.container-fluid{
+    background-image: url('https://cdn.dribbble.com/users/2283773/screenshots/4809757/media/bbd8e18eb496d9947a1b3467a70a9494.jpg?compress=1&resize=800x600&vertical=top');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+body{
+    overflow: hidden;
+}
+h1{
+    color: rgba(210, 216, 221, 0.836);
+}

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use  App\Models\Url;
 
 class UrlController extends Controller
@@ -24,7 +25,9 @@ class UrlController extends Controller
             'long_url'=>'required'
         ]);
 
-        $newUrl=Url::create($data);
+        $data['long_url']=$request->long_url;
+        $data['shorturl']=Str::random(5);
+        Url::create($data);
         return redirect(route('list'));
     }
 
@@ -39,6 +42,7 @@ class UrlController extends Controller
             'long_url'=>'required'
         ]);
 
+        $data['shorturl']=Str::random(5);
         $url->update($data);
         return redirect(route('list'))->with('success','Url Updated');
     }
@@ -47,5 +51,12 @@ class UrlController extends Controller
     {
         $url->delete();
         return redirect(route('list'))->with('success','Url Deleted');;
+    }
+
+    public function shortenurl($shorturl){
+        $find= Url::where('shorturl',$shorturl)->first();
+        return redirect($find->long_url);
+
+
     }
 }

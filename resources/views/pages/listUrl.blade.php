@@ -1,11 +1,17 @@
 @extends('layouts.main')
 
+@section('css')
+<link rel="stylesheet" href="{{URL::asset('css/listPage.css')}}"/>
+@endsection
+
+@section('title','List Url')
 @section('content')
-    <div class="container">
-        <table class="table table-borderless" border="1">
+<div class="container-fluid">
+    <div class="table-responsive">
+        <table class="table" border="1">
             <thead class="thead-dark">
                 <div>
-                    <h2>Shorten URL's </h2>
+                    <h1>Shorten URL's </h1>
                     @if (session()->has('success'))
                         <div class="text-white">
                             {{session('success')}}
@@ -23,9 +29,10 @@
             <tbody>
             @foreach($urls as $url )
             <tr>
-                <td>{{$url->id}}</td>
-                <td> <a href="http://{{$url->long_url}}" target="_blank" class="text-dark">{{$url->long_url}}</a></td>
-                <td>coming soon..!</td>
+                <td class="text-white">{{$url->id}}</td>
+                <td> <a href="{{$url->long_url}}" target="_blank">{{$url->long_url}}</a></td>
+                <td><a href="{{route('shorturl',$url->shorturl)}}" target="_blank" class="text-success" >{{route('shorturl',$url->shorturl)}}</a></td>
+
                 <td>
                     <form method="post" action="{{route('deleteurl',['url'=>$url])}}">
                         @csrf
@@ -38,6 +45,7 @@
             @endforeach
             </tbody>
         </table>
-        <a class="btn btn-" href="{{route('home')}}">Back</a>
+        <a class="btn btn-info" href="{{route('home')}}">Back</a>
     </div>
+</div>
 @endsection

@@ -1,7 +1,12 @@
 @extends('layouts.main')
 
+@section('css')
+<link rel="stylesheet" href="{{URL::asset('css/aboutUs.css')}}"/>
+@endsection
+
+@section('title','AboutUs')
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         <h1>About Us</h1>
         <p>
             Our mission is to simplify the way you share and manage links. We strive to provide a seamless and efficient URL shortening experience 
